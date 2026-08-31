@@ -1,0 +1,25 @@
+name: LAB改善・修正
+description: 既存LABの改善または修正を提案する
+title: "[改善][LAB-XXX] "
+body:
+  - type: input
+    id: lab_number
+    attributes:
+      label: LAB番号
+      placeholder: LAB-000
+    validations:
+      required: true
+  - type: textarea
+    id: requirements
+    attributes:
+      label: 改善要件
+      description: 改善または修正したい内容と理由を記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 受入条件
+      description: 対応完了と判断できる条件を記載してください。
+    validations:
+      required: true
