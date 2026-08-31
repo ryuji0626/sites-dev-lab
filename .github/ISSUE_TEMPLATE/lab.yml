@@ -1,0 +1,66 @@
+name: LAB追加
+description: 新しい検証LABを追加する
+title: "[LAB-XXX] "
+body:
+  - type: input
+    id: lab_number
+    attributes:
+      label: LAB番号
+      placeholder: LAB-001
+    validations:
+      required: true
+  - type: textarea
+    id: purpose
+    attributes:
+      label: 検証目的
+      description: 何を明らかにする検証か記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 検証環境
+      description: Sites、OS、ブラウザ、ランタイムなどを記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: prerequisites
+    attributes:
+      label: 前提条件
+      description: 検証開始前に必要な状態や設定を記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 実施内容
+      description: 再現できる手順を記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待結果
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の結果
+      description: 実施後に確認した事実を記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 証拠
+      description: ログ、スクリーンショット、URL、コミットなどを添付してください。
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 完了条件
+      description: LABを完了と判断できる条件を記載してください。
+    validations:
+      required: true
