@@ -1,0 +1,50 @@
+name: 不具合報告
+description: LABで確認した不具合を報告する
+title: "[不具合][LAB-XXX] "
+body:
+  - type: input
+    id: target_lab
+    attributes:
+      label: 対象LAB
+      placeholder: LAB-000
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 発生環境
+      description: Sites、OS、ブラウザ、ランタイムなどを記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 再現手順
+      description: 最小の再現手順を番号付きで記載してください。
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する動作
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 実際の動作
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: ログ・スクリーンショット
+      description: 機密情報を除いたログや画像を添付してください。
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: 補足
+    validations:
+      required: false
