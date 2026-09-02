@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const workflowSteps = [
   "ChatGPT Sitesで最小構成サイトを作成",
@@ -66,6 +67,23 @@ export default function Home() {
       </header>
 
       <main className="lab-main">
+        <section className="lab-index" aria-labelledby="lab-index-title">
+          <div className="section-heading">
+            <div>
+              <p className="section-kicker">LAB INDEX</p>
+              <h2 id="lab-index-title">検証一覧</h2>
+            </div>
+          </div>
+          <div className="lab-index-grid">
+            <Link href="/labs/lab-000" className="lab-index-card">
+              <span>LAB-000</span><strong>Minimal Site</strong><p>GitHub同期とIssue駆動開発</p><b>COMPLETED ↗</b>
+            </Link>
+            <Link href="/labs/lab-001" className="lab-index-card lab-index-current">
+              <span>LAB-001</span><strong>Sites × D1</strong><p>CRUD・SQL・永続性の基本検証</p><b>IN PROGRESS ↗</b>
+            </Link>
+          </div>
+        </section>
+
         <article className="lab-panel" aria-labelledby="lab-title">
           <div className="panel-marker" aria-hidden="true" />
           <div className="lab-copy">
