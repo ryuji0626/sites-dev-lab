@@ -79,7 +79,7 @@ export default function Home() {
               <span>LAB-000</span><strong>Minimal Site</strong><p>GitHub同期とIssue駆動開発</p><b>COMPLETED ↗</b>
             </Link>
             <Link href="/labs/lab-001" className="lab-index-card lab-index-current">
-              <span>LAB-001</span><strong>Sites × D1</strong><p>CRUD・SQL・永続性の基本検証</p><b>IN PROGRESS ↗</b>
+              <span>LAB-001</span><strong>Sites × D1</strong><p>CRUD・SQL・永続性の基本検証</p><b>COMPLETED ↗</b>
             </Link>
           </div>
         </section>
