@@ -8,6 +8,7 @@ const workbench = await readFile(new URL("../app/labs/lab-001/workbench.tsx", im
 const collectionRoute = await readFile(new URL("../app/api/lab-001/notes/route.ts", import.meta.url), "utf8");
 const itemRoute = await readFile(new URL("../app/api/lab-001/notes/[id]/route.ts", import.meta.url), "utf8");
 const schema = await readFile(new URL("../db/schema.ts", import.meta.url), "utf8");
+const css = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 const hosting = JSON.parse(await readFile(new URL("../.openai/hosting.json", import.meta.url), "utf8"));
 
 test("LAB-000 and LAB-001 coexist in the LAB index", () => {
@@ -15,6 +16,13 @@ test("LAB-000 and LAB-001 coexist in the LAB index", () => {
   assert.match(rootPage, /LAB-001/);
   assert.match(rootPage, /\/labs\/lab-000/);
   assert.match(rootPage, /\/labs\/lab-001/);
+  assert.match(rootPage, /LAB-001[\s\S]*COMPLETED/);
+  assert.doesNotMatch(rootPage, /IN PROGRESS/);
+});
+
+test("LAB-001 SQL output stays within its grid column", () => {
+  assert.match(css, /\.workbench-grid > \*,[\s\S]*\.sql-output > div \{ min-width: 0; \}/);
+  assert.match(css, /\.sql-output pre \{[^}]*width: 100%;[^}]*max-width: 100%;[^}]*overflow-x: auto;/);
 });
 
 test("LAB-001 exposes CRUD UI and SQL evidence", () => {
